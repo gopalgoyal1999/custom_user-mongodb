@@ -1,3 +1,4 @@
+import binascii
 from django_mongoengine import fields,Document
 from datetime import datetime
 import os

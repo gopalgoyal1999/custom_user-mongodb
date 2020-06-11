@@ -49,6 +49,12 @@ INSTALLED_APPS = [
 
 AUTH_USER_MODEL = 'mongo_auth.Mongouser'
 
+SESSION_ENGINE = 'django_mongoengine.sessions'
+
+#MONGOENGINE_USER_DOCUMENT = 'django_mongoengine.auth.User'
+
+CORS_ALLOW_CREDENTIALS = True
+
 MONGOENGINE_USER_DOCUMENT = 'login.models.User'
 
 MIDDLEWARE = [
@@ -86,7 +92,7 @@ WSGI_APPLICATION = 'Reg.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databasesDATABASES = {
 AUTHENTICATION_BACKENDS = (
-    'django_mongoengine.auth.MongoEngineBackend',
+    'django_mongoengine.mongo_auth.backends.MongoEngineBackend',
 )
 
 DATABASES = {
@@ -100,8 +106,8 @@ DATABASES = {
 MONGODB_DATABASES = {
     "default": {
         "name": "login",
-        "host": 'mongodb+srv://********:*********@cluster0-uvivi.mongodb.net/login-api?retryWrites=true&w=majority',
-        "password": "********",
+        "host": 'mongodb+srv://gopal:9582870584@cluster0-uvivi.mongodb.net/login-api?retryWrites=true&w=majority',
+        "password": "9582870584",
         "username": "gopal",
         "tz_aware": True, # if you using timezones in django (USE_TZ = True)
     },
@@ -145,14 +151,11 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-
-'''
 REST_FRAMEWORK = {
-        "DEFAULT_PERMISSION_CLASSES": (
-            'rest_framework.permissions.IsAuthenticated',
-        ),
         "DEFAULT_AUTHENTICATION_CLASSES" : (
             'rest_framework.authentication.SessionAuthentication',
         ),
+        # 'DEFAULT_PERMISSION_CLASSES': (
+        #     'rest_framework.permissions.IsAuthenticated',
+        # ),
         }
-'''

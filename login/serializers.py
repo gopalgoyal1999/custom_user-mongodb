@@ -4,7 +4,8 @@ from mongoengine.queryset.visitor import Q
 from django_mongoengine import fields
 from django_mongoengine.mongo_auth.models import MongoUser
 from .models import User
- #User = get_user_model()
+
+#User = get_user_model()
 
 class UserCreateSerializer(serializers.DocumentSerializer):
     email2 = fields.EmailField(label='Confirm Email')
@@ -73,3 +74,5 @@ class UserLoginSerializer(serializers.DocumentSerializer):
             if not user_obj.password==password:
                 raise generics.ValidationError("Incorrect credentials please try again.")
         return data
+
+
