@@ -106,9 +106,9 @@ DATABASES = {
 MONGODB_DATABASES = {
     "default": {
         "name": "login",
-        "host": 'mongodb+srv://gopal:9582870584@cluster0-uvivi.mongodb.net/login-api?retryWrites=true&w=majority',
-        "password": "9582870584",
-        "username": "gopal",
+        "host": 'mongodb+srv://*********@cluster0-uvivi.mongodb.net/login-api?retryWrites=true&w=majority',
+        "password": "********",
+        "username": "*******",
         "tz_aware": True, # if you using timezones in django (USE_TZ = True)
     },
 }
